@@ -12,9 +12,6 @@
     }
   ],
   "readme": "README.md",
-  "suggest": {
-    "genealabs/laravel-socialiter": "Automatic user resolution and persistence for any Laravel Socialite driver."
-  },
   "require": {
     "illuminate/support": "5.5.*",
     "laravel/socialite": "^3."
