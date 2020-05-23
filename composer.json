@@ -1,5 +1,5 @@
 {
-  "name": "pivoby/laravel-sign-in-with-apple",
+  "name": "arsoba/laravel-sign-in-with-apple",
   "description": "Add Apple's new single-signon feature to your site with ease.",
   "type": "library",
   "license": "MIT",
@@ -41,7 +41,5 @@
         "\\GeneaLabs\\LaravelSignInWithApple\\Providers\\ServiceProvider"
       ]
     }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }
