@@ -78,6 +78,20 @@ class SignInWithAppleProvider extends AbstractProvider implements ProviderInterf
 
     protected function getUserByToken($token)
     {
+        $response = $this->getAccessTokenResponse($token);
+
+        $user = $this->mapUserToObject($this->getUserByIdToken(
+            Arr::get($response, 'id_token')
+        ));
+
+        return $user
+            ->setToken(Arr::get($response, 'access_token'))
+            ->setRefreshToken(Arr::get($response, 'refresh_token'))
+            ->setExpiresIn(Arr::get($response, 'expires_in'));
+    }
+
+    protected function getUserByIdToken($token)
+    {
         $claims = explode('.', $token)[1];
 
         return json_decode(base64_decode($claims), true);
@@ -87,7 +101,7 @@ class SignInWithAppleProvider extends AbstractProvider implements ProviderInterf
     {
         $response = $this->getAccessTokenResponse($this->getCode());
 
-        $user = $this->mapUserToObject($this->getUserByToken(
+        $user = $this->mapUserToObject($this->getUserByIdToken(
             Arr::get($response, 'id_token')
         ));
 
