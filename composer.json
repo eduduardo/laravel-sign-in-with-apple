@@ -13,8 +13,7 @@
   ],
   "readme": "README.md",
   "require": {
-    "illuminate/support": "5.5.*",
-    "laravel/socialite": "^3."
+    "illuminate/support": "5.5.*"
   },
   "require-dev": {
     "orchestra/testbench-browser-kit": "^5.0",
